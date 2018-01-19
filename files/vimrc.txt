@@ -1,0 +1,117 @@
+" 0. index
+" 1 -> key mappings
+" 2 -> settings
+" 3 -> functions
+
+
+" 1. key mappings
+" buffers
+nnoremap <leader>b :b
+nnoremap <leader>1 :b 1<cr>
+nnoremap <leader>2 :b 2<cr>
+nnoremap <leader>3 :b 3<cr>
+nnoremap <leader>4 :b 4<cr>
+nnoremap <leader>5 :b 5<cr>
+nnoremap <leader>6 :b 6<cr>
+nnoremap <leader>7 :b 7<cr>
+nnoremap <leader>8 :b 8<cr>
+nnoremap <leader>9 :b 9<cr>
+
+" editing
+nnoremap <leader>r :e %<cr>
+nnoremap <c-j> :move +1<cr>
+nnoremap <c-k> :move -2<cr>
+nnoremap <space> za
+
+" copying
+nnoremap Y "*y
+xnoremap Y "*y
+nnoremap X "*d
+xnoremap X "*d
+nnoremap <leader>l ^"*y$
+nnoremap <leader>L ^"*d$dd
+nnoremap <leader>f "*y$
+nnoremap <leader>F "*d$
+nnoremap <leader>d yyp
+
+" quitting
+inoremap jj <Esc>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :wq<cr>
+nnoremap <leader>x :q<cr>
+nnoremap <leader>X :q!<cr>
+
+" settings
+nnoremap <leader>i :set shiftwidth=2<cr>
+nnoremap <leader>I :set shiftwidth=4<cr>
+nnoremap <leader>n :set relativenumber<cr>
+nnoremap <leader>N :set relativenumber&<cr>
+nnoremap <leader>c :set cursorline<cr>
+nnoremap <leader>C :set cursorline&<cr>
+
+" movement
+nnoremap J 4j
+nnoremap K 4k
+nnoremap H B
+nnoremap L E
+nnoremap <leader>a _
+nnoremap <leader>e $
+
+" visual
+vnoremap J 4j
+vnoremap K 4k
+vnoremap H B
+vnoremap L E
+
+" windows
+nnoremap <leader>s :vert sba<cr>
+nnoremap <leader>[ <C-w>h
+nnoremap <leader>] <C-w>l
+
+
+"2. settings
+" interface
+syntax on 
+set noruler 
+set noerrorbells
+set novisualbell
+set numberwidth=3
+set wildmenu
+set laststatus=0
+set statusline=%t
+set nomodeline
+
+" wrapping
+set nowrap
+set linebreak
+set scrolloff=8
+set backspace=indent,eol,start
+
+" searching
+set ignorecase 
+set smartcase
+set nomagic
+set incsearch
+
+" indentation
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
+filetype plugin indent on
+
+" folding
+set foldminlines=0
+set foldmethod=indent
+set nofoldenable
+
+
+"3. functions
+" define fold text
+fu! CustomFoldText()
+    let width = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    return "–" . repeat("–", width)
+endf
+set foldtext=CustomFoldText()
+
