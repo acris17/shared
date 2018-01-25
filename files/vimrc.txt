@@ -5,6 +5,9 @@
 
 
 " 1. key mappings
+" new
+nnoremap <leader>f v$
+
 " buffers
 nnoremap <leader>b :b
 nnoremap <leader>1 :b 1<cr>
@@ -30,8 +33,6 @@ nnoremap X "*d
 xnoremap X "*d
 nnoremap <leader>l ^"*y$
 nnoremap <leader>L ^"*d$dd
-nnoremap <leader>f "*y$
-nnoremap <leader>F "*d$
 nnoremap <leader>d yyp
 
 " quitting
@@ -105,6 +106,7 @@ filetype plugin indent on
 set foldminlines=0
 set foldmethod=indent
 set nofoldenable
+set foldignore=
 
 
 "3. functions
