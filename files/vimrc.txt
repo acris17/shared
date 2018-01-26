@@ -7,6 +7,7 @@
 " 1. key mappings
 " new
 nnoremap <leader>f v$
+nnoremap <leader>A :%y+<cr>
 
 " buffers
 nnoremap <leader>b :b
