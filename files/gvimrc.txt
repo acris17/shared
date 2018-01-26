@@ -1,0 +1,11 @@
+" 1. settings
+" set guioptions-=a
+set guioptions-=r
+set guioptions-=L
+set guioptions-=m
+set background=dark
+set guicursor+=v-c-i:ver7-blinkon0
+set guicursor+=n-r-o:hor7-blinkon0
+set visualbell
+set noshowmode
+set transparency=18
