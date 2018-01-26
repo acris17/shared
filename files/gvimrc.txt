@@ -8,4 +8,3 @@ set guicursor+=v-c-i:ver7-blinkon0
 set guicursor+=n-r-o:hor7-blinkon0
 set visualbell
 set noshowmode
-set transparency=18
