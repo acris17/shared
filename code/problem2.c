@@ -1,19 +1,19 @@
-// imports
+// includes
 #include <stdio.h>
 #include <stdbool.h> // bool, true, false
-#include <time.h>    // time_t, time
 #include <unistd.h>  // usleep
-#include <pthread.h> // pthread_exit, pthread_t, pthread_create
+#include <pthread.h> // pthread_exit, pthread_t, pthread_create, mutex, barrier
 #include <stdlib.h>  // EXIT_SUCCESS, atoi, exit, NULL, RAND_MAX, rand, srand
 
 
-// globals
-#define MAX_THREADS 10
-int shared_variable = 0;
+// global variables
+#define MAX_THREADS 300  // max number of threads
+int shared_variable = 0; // variable shared between threads
 
 
-// mutex
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+// synchronization variables
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; // mutex
+pthread_barrier_t barrier; // barrier
 
 
 // parsing functions
@@ -49,27 +49,28 @@ int parse_positive_number(char *string) {
 // thread functions
 void *simple_thread(void *thread_id) {
     int value;
-    time_t timer;
     long tid = (long)thread_id;
 
-    // srand((unsigned) time(&timer));
     for (int number = 0; number < 20; ++number) {
+        pthread_mutex_lock(&mutex); // lock
         if (random() > RAND_MAX / 2) {
             usleep(500);
         }
-        pthread_mutex_lock(&mutex); // lock
+        
         value = shared_variable;
         printf("thread(%ld): value = %d\n", tid, value);
         shared_variable = value + 1;
         pthread_mutex_unlock(&mutex); // unlock
     }
 
+    pthread_barrier_wait(&barrier);
     value = shared_variable;
     printf("thread(%ld): final value = %d\n", tid, value);
     pthread_exit(NULL);
 }
 void spawn_function(int num_threads) {
     pthread_t threads[num_threads];
+    pthread_barrier_init(&barrier, NULL, num_threads+1);
 
     for (long index = 0; index < num_threads; ++index) {
         printf("main: creating thread %ld\n", index);
@@ -80,6 +81,9 @@ void spawn_function(int num_threads) {
             exit(-1);
         }
     }
+
+    pthread_barrier_wait(&barrier);
+    pthread_barrier_destroy(&barrier);
     pthread_exit(NULL);
 }
 
