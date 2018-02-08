@@ -5,10 +5,6 @@
 
 
 " 1. key mappings
-" new
-nnoremap <leader>f v$
-nnoremap <leader>A :%y+<cr>
-
 " buffers
 nnoremap <leader>b :b
 nnoremap <leader>1 :b 1<cr>
@@ -28,13 +24,16 @@ nnoremap <c-k> :move -2<cr>
 nnoremap <space> za
 
 " copying
-nnoremap Y "*y
-xnoremap Y "*y
-nnoremap X "*d
-xnoremap X "*d
-nnoremap <leader>l ^"*y$
-nnoremap <leader>L ^"*d$dd
+nnoremap Y "+y
+xnoremap Y "+y
+nnoremap X "+d
+xnoremap X "+d
+nnoremap <leader>l ^"+y$
+nnoremap <leader>L ^"+d$dd
 nnoremap <leader>d yyp
+nnoremap <leader>f "+y$
+nnoremap <leader>F "+d$
+nnoremap <leader>A :%y+<cr>
 
 " quitting
 inoremap jj <Esc>
