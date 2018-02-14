@@ -65,7 +65,7 @@ vnoremap H B
 vnoremap L E
 
 " windows
-nnoremap <leader>s :vert sba<cr>
+nnoremap <leader>v :vert sba<cr>
 nnoremap <leader>[ <C-w>h
 nnoremap <leader>] <C-w>l
 
