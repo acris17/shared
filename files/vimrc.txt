@@ -19,9 +19,9 @@ nnoremap <leader>9 :b 9<cr>
 
 " editing
 nnoremap <leader>r :e %<cr>
+nnoremap <space> za
 nnoremap <c-j> :move +1<cr>
 nnoremap <c-k> :move -2<cr>
-nnoremap <space> za
 
 " copying
 nnoremap Y "+y
@@ -53,16 +53,12 @@ nnoremap <leader>C :set cursorline&<cr>
 " movement
 nnoremap J 4j
 nnoremap K 4k
-nnoremap H B
-nnoremap L E
 nnoremap <leader>a _
 nnoremap <leader>e $
 
 " visual
 vnoremap J 4j
 vnoremap K 4k
-vnoremap H B
-vnoremap L E
 
 " windows
 nnoremap <leader>v :vert sba<cr>
