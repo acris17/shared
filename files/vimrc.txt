@@ -31,9 +31,9 @@ xnoremap X "+d
 nnoremap <leader>l ^"+y$
 nnoremap <leader>L ^"+d$dd
 nnoremap <leader>d yyp
+vnoremap <leader>d yP
 nnoremap <leader>f "+y$
 nnoremap <leader>F "+d$
-nnoremap <leader>A :%y+<cr>
 
 " quitting
 inoremap jj <Esc>
@@ -45,8 +45,6 @@ nnoremap <leader>X :q!<cr>
 " settings
 nnoremap <leader>i :set shiftwidth=2<cr>
 nnoremap <leader>I :set shiftwidth=4<cr>
-nnoremap <leader>n :set relativenumber<cr>
-nnoremap <leader>N :set relativenumber&<cr>
 nnoremap <leader>c :set cursorline<cr>
 nnoremap <leader>C :set cursorline&<cr>
 
@@ -55,15 +53,14 @@ nnoremap J 4j
 nnoremap K 4k
 nnoremap <leader>a _
 nnoremap <leader>e $
+nnoremap H b
+nnoremap L e
+vnoremap H b
+vnoremap L e 
 
 " visual
 vnoremap J 4j
 vnoremap K 4k
-
-" windows
-nnoremap <leader>v :vert sba<cr>
-nnoremap <leader>[ <C-w>h
-nnoremap <leader>] <C-w>l
 
 
 "2. settings
@@ -107,10 +104,9 @@ set foldignore=
 
 
 "3. functions
-" define fold text
-fu! CustomFoldText()
+" CustomFoldText - define fold text
+function! CustomFoldText()
     let width = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    return "–" . repeat("–", width)
-endf
+    return "-" . repeat("-", width)
+endfunction
 set foldtext=CustomFoldText()
-
