@@ -1,0 +1,25 @@
+[user]
+	name = Andrew Cristancho
+	email = acristancho0117@gmail.com
+[core]
+	editor = vim
+	abbrev = 8
+[color]
+	ui = auto
+[log]
+	abbrevCommit = yes
+[alias]
+  edit = config --global --edit
+  save = !git add --all && git commit
+  s = status -s
+  st = status
+  ds = diff --staged
+	ls = log --graph --decorate --pretty=oneline
+  lf = log --graph --decorate --pretty=oneline --name-only
+  ld = log --graph --decorate --pretty=oneline -u
+	last = log -1 HEAD
+	lastdiff = diff --cached HEAD^
+  all = add --all
+  untrack = rm --cached
+  unstage = reset HEAD
+  undo = checkout -- 
