@@ -16,6 +16,9 @@ nnoremap <leader>6 :b 6<cr>
 nnoremap <leader>7 :b 7<cr>
 nnoremap <leader>8 :b 8<cr>
 nnoremap <leader>9 :b 9<cr>
+nnoremap <leader>] :bnext<cr>
+nnoremap <leader>[ :bprev<cr>
+nnoremap <leader>s :vert sba<cr>
 
 " editing
 nnoremap <leader>r :e %<cr>
