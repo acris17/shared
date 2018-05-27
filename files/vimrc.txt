@@ -18,9 +18,9 @@ nnoremap <leader>8 :b 8<cr>
 nnoremap <leader>9 :b 9<cr>
 nnoremap <leader>] :bnext<cr>
 nnoremap <leader>[ :bprev<cr>
-nnoremap <leader>s :vert sba<cr>
 
 " editing
+inoremap jj <Esc>
 nnoremap <leader>r :e %<cr>
 nnoremap <space> za
 nnoremap <c-j> :move +1<cr>
@@ -31,15 +31,18 @@ nnoremap Y "+y
 xnoremap Y "+y
 nnoremap X "+d
 xnoremap X "+d
+
+" lines
 nnoremap <leader>l ^"+y$
 nnoremap <leader>L ^"+d$dd
-nnoremap <leader>d yyp
-vnoremap <leader>d yP
 nnoremap <leader>f "+y$
 nnoremap <leader>F "+d$
 
+" duplicate
+nnoremap <leader>d yyp
+vnoremap <leader>d yP
+
 " quitting
-inoremap jj <Esc>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<cr>
 nnoremap <leader>x :q<cr>
@@ -64,6 +67,7 @@ vnoremap L e
 " visual
 vnoremap J 4j
 vnoremap K 4k
+nnoremap <leader>A ggVG
 
 
 "2. settings
