@@ -57,19 +57,20 @@ nnoremap <leader>C :set cursorline&<cr>
 " movement
 nnoremap J 4j
 nnoremap K 4k
-nnoremap <leader>a _
-nnoremap <leader>e $
 nnoremap H b
 nnoremap L e
-vnoremap H b
-vnoremap L e 
+nnoremap <leader>a _
+nnoremap <leader>e $
 
 " visual
 vnoremap J 4j
 vnoremap K 4k
+vnoremap H b
+vnoremap L e 
 nnoremap <leader>A ggVG
 
 " windows
+nnoremap <leader>t :vert term<cr>
 nnoremap <leader>s :vert sba<cr>
 
 
@@ -86,6 +87,7 @@ set statusline=%t
 set nomodeline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set splitright
+set shortmess=AsIatTc
 
 " wrapping
 set nowrap
