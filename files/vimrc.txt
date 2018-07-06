@@ -4,6 +4,10 @@
 " 3 -> functions
 
 
+" new
+set clipboard=unnamed
+
+
 " 1. key mappings
 " buffers
 nnoremap <leader>b :b
