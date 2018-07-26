@@ -26,18 +26,6 @@ nnoremap <space> za
 nnoremap <c-j> :move +1<cr>
 nnoremap <c-k> :move -2<cr>
 
-" copying
-nnoremap Y "+y
-xnoremap Y "+y
-nnoremap X "+d
-xnoremap X "+d
-
-" lines
-nnoremap <leader>l ^"+y$
-nnoremap <leader>L ^"+d$dd
-nnoremap <leader>f "+y$
-nnoremap <leader>F "+d$
-
 " duplicate
 nnoremap <leader>d yyp
 vnoremap <leader>d yP
@@ -72,6 +60,22 @@ nnoremap <leader>A ggVG
 " windows
 nnoremap <leader>t :vert term<cr>
 nnoremap <leader>s :vert sba<cr>
+
+" clipboard
+nnoremap Y "+y
+xnoremap Y "+y
+nnoremap X "+d
+xnoremap X "+d
+
+" lines
+nnoremap <leader>l ^"+y$
+nnoremap <leader>L ^"+d$dd
+nnoremap <leader>f "+y$
+nnoremap <leader>F "+d$
+
+" paste
+inoremap <c-v> <Esc>"+]P
+nnoremap <leader>v "+]P
 
 
 "2. settings
