@@ -57,10 +57,6 @@ vnoremap H b
 vnoremap L e 
 nnoremap <leader>A ggVG
 
-" windows
-nnoremap <leader>t :vert term<cr>
-nnoremap <leader>s :vert sba<cr>
-
 " clipboard
 nnoremap Y "+y
 xnoremap Y "+y
