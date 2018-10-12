@@ -1,5 +1,4 @@
 " 1. settings
-" set guioptions-=a
 set guioptions-=r
 set guioptions-=L
 set guioptions-=m

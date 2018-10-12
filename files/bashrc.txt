@@ -1,0 +1,7 @@
+# interface
+export PS1="$ "
+
+# vim
+VISUAL=vim; export VISUAL
+EDITOR=vim; export EDITOR
+GIT_EDITOR=vim; export GIT_EDITOR
