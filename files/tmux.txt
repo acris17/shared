@@ -1,0 +1,32 @@
+# 0. index
+# 1 -> keybindings
+# 2 -> settings
+
+
+# N. new
+set-option -g mouse on
+set-option -g prefix c-space
+
+
+# 1. keybindings
+# panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+
+# 2. settings
+# customizations
+set -s escape-time 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# terminal
+set -g default-terminal "screen-256color"
+
+# status bar
+set -g status off
+set -g status-right ""
+set -g window-status-format ""
+set -g window-status-current-format ""
