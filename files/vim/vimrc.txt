@@ -32,7 +32,9 @@ vnoremap <leader>d yP
 
 " quitting
 nnoremap <leader>w :w<cr>
+nnoremap <leader>W :wa<cr>
 nnoremap <leader>q :wq<cr>
+nnoremap <leader>Q :wqa<cr>
 nnoremap <leader>x :q<cr>
 nnoremap <leader>X :q!<cr>
 
