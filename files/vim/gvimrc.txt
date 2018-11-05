@@ -1,12 +1,24 @@
+" 0. index
+" 1 -> settings
+" 2 -> windows specific
+
+
 " 1. settings
+" guioptions
 set guioptions-=r
 set guioptions-=L
 set guioptions-=m
+
+" appearance
 set background=dark
+
+" interface
 set guicursor+=v-c-i:ver7-blinkon0
 set guicursor+=n-r-o:hor7-blinkon0
 set visualbell
 set noshowmode
+set autoread
 
-"2. windows
+
+" 2. windows specific
 set guioptions-=T
