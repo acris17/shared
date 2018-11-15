@@ -4,6 +4,12 @@
 " 3 -> functions
 
 
+" N. new
+" macros
+nnoremap <leader>m @a
+nnoremap <leader>M qa 
+
+
 " 1. key mappings
 " buffers
 nnoremap <leader>b :b
@@ -36,9 +42,11 @@ nnoremap <leader>c :set cursorline<cr>
 nnoremap <leader>C :set cursorline&<cr>
 
 " movement
-nnoremap J 4j
-nnoremap K 4k
+nnoremap j gj
+nnoremap k gk
 nnoremap H b
+nnoremap J 4gj
+nnoremap K 4gk
 nnoremap L e
 nnoremap <leader>a _
 nnoremap <leader>e $
